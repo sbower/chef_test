@@ -8,6 +8,11 @@ group 'tcadm' do
   gid '7070'
 end
 
+user 'pollinate' do
+  uid '1001'
+  action :manage
+end
+
 user 'tcowner' do
   comment 'tcowner account to scyn with on prem'
   uid '11448'
