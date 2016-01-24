@@ -15,4 +15,7 @@ docker_container 'stash' do
   tag 'latest'
   port '7990:7990'
   volumes [ '/stash:/atlassian/data/stash' ]
+  restart_policy 'always'
+  log_driver 'syslog'
+  action :run_if_missing
 end
