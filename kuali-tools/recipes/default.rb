@@ -4,6 +4,7 @@
 #
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 docker_service 'default' do
+  install_method 'script'
   action [:create, :start]
 end
 
