@@ -6,6 +6,6 @@
 include_recipe 'aws'
 
 aws_resource_tag node['ec2']['instance_id'] do
-  tags('os' => 'ubuntu')
+  tags('os' => node['platform'])
   action :update
 end
