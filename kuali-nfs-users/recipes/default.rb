@@ -4,6 +4,11 @@
 #
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 
+users_manage "tcadm" do
+  group_id 7070
+  action [ :remove, :create ]
+end
+
 user 'tcowner' do
   comment 'tcowner account to scyn with on prem'
   uid '11448'
@@ -18,9 +23,4 @@ user 'tomcat7' do
   gid '7070'
   home '/home/tomcat7'
   shell '/bin/bash'
-end
-
-users_manage "tcadm" do
-  group_id 7070
-  action [ :remove, :create ]
 end
