@@ -4,9 +4,8 @@
 #
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 
-users_manage "tcadm" do
-  group_id 7070
-  action [ :remove, :create ]
+group 'tcadm' do
+  gid '7070'
 end
 
 user 'tcowner' do
