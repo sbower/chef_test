@@ -8,7 +8,7 @@ docker_service 'default' do
 end
 
 docker_registry 'https://docker.cucloud.net/' do
-  username 'test'
-  password 'testing'
+  username node['dtr']['user']
+  password node['dtr']['password']
   email ''
 end
