@@ -1,0 +1,18 @@
+#
+# Cookbook Name:: kuali-tools
+# Recipe:: default
+#
+# Copyright (c) 2016 The Authors, All Rights Reserved.
+
+docker_image 'docker.cucloud.net/stash' do
+  tag 'latest'
+  action :pull
+  notifies :redeploy, 'docker_container[stash]'
+end
+
+docker_container 'stash' do
+  repo 'docker.cucloud.net/stash'
+  tag 'latest'
+  port '7990:7990'
+  volumes [ '/stash:/atlassian/data/stash' ]
+end
