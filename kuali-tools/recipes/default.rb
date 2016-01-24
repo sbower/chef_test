@@ -3,9 +3,12 @@
 # Recipe:: default
 #
 # Copyright (c) 2016 The Authors, All Rights Reserved.
-docker_service 'default' do
-  install_method 'script'
-  action [:create, :start]
+package 'docker' do
+  action :install
+end
+
+service 'docker' do
+  action :start
 end
 
 docker_registry 'https://docker.cucloud.net/' do
