@@ -7,7 +7,7 @@
 docker_image 'docker.cucloud.net/stash' do
   tag 'latest'
   action :pull
-  notifies :redeploy, 'docker_container[stash]'
+  notifies :redeploy, 'docker_container[stash]', :immediately
 end
 
 docker_container 'stash' do
